@@ -1,0 +1,42 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+            <h1>Create a Secret Santa Group!</h1>
+            <p>Enter each participant's name and phone number below using the <a href='https://www.twilio.com/docs/glossary/what-e164'>E.164 format</a></p>
+            <form method="POST" action="{{ url_for('create_assignments') }}">
+                {{ csrf_token }}
+                <div class='flex_column'>
+                    <div>
+                      <fieldset>
+                        <input type="text" placeholder='Name of Participant #1' id="name1" name="name1"required>
+                        <input type="text" placeholder='Phone number' id="phone1" name="phone1"required>
+                      </fieldset>
+                    </div>
+                    <div>
+                      <fieldset>
+                        <input type="text" placeholder='Name of Participant #2' id="name2" name="name2"required>
+                        <input type="text" placeholder='Phone number' id="phone2" name="phone2"required>
+                      </fieldset>
+                    </div>
+                    <div>
+                      <fieldset>
+                        <input type="text" placeholder='Name of Participant #3' id="name3" name="name3"required>
+                        <input type="text" placeholder='Phone number' id="phone3" name="phone3"required>
+                      </fieldset>
+                    </div>
+                    <div>
+                      <fieldset>
+                        <input type="text" placeholder='Name of Participant #4' id="name4" name="name4"required>
+                        <input type="text" placeholder='Phone number' id="phone4" name="phone4"required>
+                      </fieldset>
+                    </div>
+                    <div>
+                        <button type="submit" class="button">Generate Secret Santa pairs & send SMS notifications</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
